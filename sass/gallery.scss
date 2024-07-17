@@ -1,0 +1,450 @@
+@use "./colors" as c;
+
+//  G L O B A L  R E S E T
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body {
+	height: 100vh;
+	font-family: "Montserrat", sans-serif;
+	font-size: 1.6rem;
+	color: c.$black;
+}
+
+section {
+	scroll-margin-top: 50px;
+}
+
+a,
+a:link,
+a:visited {
+	text-decoration: none;
+	color: c.$black;
+}
+
+.wrapper {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1200px;
+}
+
+.section-title {
+	padding-top: 1.5em;
+	margin-bottom: 0.5em;
+	text-align: center;
+	font-family: "Rellyan Charlotte", "Dancing Script", "Montserrat", sans-serif;
+}
+
+.section-underline {
+	margin: 0 auto;
+	background-color: c.$gold;
+}
+
+//  N A V I G A T I O N
+
+.nav {
+	position: fixed;
+	top: 0;
+	align-items: center;
+	width: 100%;
+	background-color: c.$light-white;
+	z-index: 100;
+
+	&--clicked {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		height: 100vh;
+	}
+
+	&__btn {
+		margin: 1em;
+		padding: 0.5em;
+		background: none;
+		border: 1px solid transparent;
+		z-index: 100;
+		cursor: pointer;
+
+		&:focus {
+			outline: none;
+			border: 1px solid c.$black;
+			border-radius: 4px;
+		}
+	}
+
+	&__btn-icon {
+		font-size: 2rem;
+		color: c.$black;
+	}
+
+	&__items {
+		display: none;
+
+		&--unhidden {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			display: flex;
+			flex-direction: column;
+		}
+	}
+
+	&__item {
+		margin-top: 0.5em;
+		padding: 1em 2em;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-size: 2rem;
+		color: c.$black;
+	}
+
+	&__socials {
+		display: none;
+	}
+}
+
+// G A L L E R Y
+
+.gallery {
+	padding-top: 3em;
+
+	&__title {
+		font-size: 2.6rem;
+	}
+
+	&__underline {
+		width: 15%;
+		height: 2px;
+	}
+
+	&__box {
+		margin: 2em auto;
+		padding: 0.5em;
+	}
+
+	&__option {
+		margin: 1em 0;
+		box-shadow: 5px 5px 10px rgba($color: #939393, $alpha: 0.5);
+		background-color: c.$light-white;
+		overflow: hidden;
+
+		&-img {
+			width: 100%;
+		}
+
+		&-info {
+			padding: 2em;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			background-color: c.$light-white;
+		}
+
+		&-heading {
+			margin: 0.5em 0;
+			font-size: 2.2rem;
+			font-weight: 300;
+		}
+
+		&-btn {
+			margin-top: 0.5em;
+			padding: 0.5em 1em;
+			background-color: c.$gold;
+			border: none;
+			cursor: pointer;
+			transition: background-color 0.3s;
+
+			&:hover {
+				background-color: goldenrod;
+			}
+		}
+	}
+}
+
+//  F O O T E R
+
+.footer {
+	background-color: c.$light-white;
+	overflow: hidden;
+	// hr {
+	// 	color: c.$light-white;
+	// 	width: 100vw;
+	// }
+
+	&__box {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin: 0 1em;
+	}
+
+	&__contact-details {
+		text-align: center;
+
+		h3 {
+			margin: 0.5em 0;
+			font-family: "Rellyan Charlotte", "Dancing Script", "Montserrat",
+				sans-serif;
+			font-size: 2.6rem;
+		}
+
+		i {
+			margin-right: 0.5em;
+			margin-bottom: 0.25em;
+		}
+
+		p {
+			font-size: 1.4rem;
+		}
+	}
+
+	&__socials {
+		margin: 1em 0;
+
+		a {
+			text-decoration: none;
+			color: c.$black;
+
+			&:link,
+			&:visited {
+				color: c.$black;
+			}
+		}
+
+		i {
+			margin: 0 0.25em;
+			font-size: 2.6rem;
+		}
+	}
+
+	&__copyrights {
+		margin: 1em 0;
+
+		p {
+			font-size: 1.4rem;
+		}
+	}
+}
+
+//   M E D I A  Q U E R I E S
+
+@media (min-width: 576px) {
+	.gallery {
+		&__title {
+			font-size: 2.8rem;
+		}
+
+		&__option {
+			display: flex;
+			margin: 2em 0;
+			width: 100%;
+
+			&-img {
+				width: 50%;
+				height: auto;
+
+				&--right {
+					order: 1;
+				}
+			}
+
+			&-info {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				width: 50%;
+			}
+
+			&-heading {
+				font-size: 2.6rem;
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.nav {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+
+		&__btn {
+			display: none;
+		}
+
+		&__items {
+			display: flex;
+			align-items: center;
+		}
+
+		&__item {
+			position: relative;
+			margin-top: 0;
+			padding: 1em 2em;
+			text-decoration: none;
+			text-transform: uppercase;
+			font-size: 1.6rem;
+			color: c.$black;
+			transition: color 0.3s;
+
+			&:hover {
+				color: c.$gold;
+			}
+		}
+
+		&__item,
+		&__item::after,
+		&__item::before {
+			transition: width 0.3s;
+		}
+
+		&__socials {
+			display: flex;
+			flex-direction: row;
+			margin-right: 2em;
+		}
+
+		&__socials-icon {
+			padding: 0.5em;
+			text-decoration: none;
+			font-size: 1.8rem;
+			color: c.$black;
+			transition: color 0.3s, scale 0.3s;
+
+			&:hover {
+				color: c.$gold;
+				scale: 1.3;
+			}
+		}
+	}
+
+	.item-animation::before,
+	.item-animation::after {
+		content: "";
+		position: absolute;
+		width: 0;
+		bottom: 0;
+		border-bottom: 2px solid c.$gold;
+	}
+
+	.item-animation::before {
+		right: 50%;
+	}
+
+	.item-animation::after {
+		left: 50%;
+	}
+
+	.item-animation:hover::before,
+	.item-animation:hover::after {
+		width: 50%;
+	}
+
+	.gallery {
+		&__title {
+			font-size: 3rem;
+		}
+
+		&__underline {
+			width: 5%;
+			height: 3px;
+		}
+
+		&__box {
+			padding: 0.5em;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(20, 200px);
+			gap: 0.25em;
+		}
+	}
+
+	.footer {
+		&__contact-details {
+			h3 {
+				font-size: 3.2rem;
+			}
+
+			p {
+				font-size: 1.6rem;
+			}
+		}
+
+		&__socials {
+			i {
+				margin: 0 0.5em;
+				font-size: 3rem;
+				transition: color 0.3s;
+
+				&:hover {
+					color: c.$gold;
+				}
+			}
+		}
+
+		&__copyrights {
+			p {
+				font-size: 1.6rem;
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.nav {
+		&__item {
+			font-size: 1.8rem;
+		}
+
+		&__socials-icon {
+			font-size: 2rem;
+
+			&:hover {
+				scale: 1.5;
+			}
+		}
+	}
+
+	.item-animation::before,
+	.item-animation::after {
+		border-bottom: 3px solid c.$gold;
+	}
+
+	.gallery {
+		&__title {
+			font-size: 3.2rem;
+		}
+
+		&__box {
+			padding: 1em;
+			grid-template-columns: repeat(4, 1fr);
+			grid-template-rows: repeat(10, 200px);
+			gap: 0.25em;
+		}
+
+		&__option {
+			&-img {
+				object-fit: cover;
+				height: 300px;
+			}
+
+			&-text {
+				font-size: 1.5rem;
+			}
+		}
+	}
+}

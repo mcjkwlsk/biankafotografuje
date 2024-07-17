@@ -1,0 +1,783 @@
+@use "./colors" as c;
+
+//  G L O B A L  R E S E T
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body {
+	height: 100vh;
+	font-family: "Montserrat", sans-serif;
+	font-size: 1.6rem;
+	color: c.$black;
+}
+
+section {
+	scroll-margin-top: 50px;
+}
+
+a,
+a:link,
+a:visited {
+	text-decoration: none;
+	color: c.$black;
+}
+
+.wrapper {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1200px;
+}
+
+.section-title {
+	padding-top: 1.5em;
+	margin-bottom: 0.5em;
+	text-align: center;
+	font-family: "Rellyan Charlotte", "Dancing Script", "Montserrat", sans-serif;
+}
+
+.section-underline {
+	margin: 0 auto;
+	background-color: c.$gold;
+}
+
+//  N A V I G A T I O N
+
+.nav {
+	position: fixed;
+	top: 0;
+	align-items: center;
+	width: 100%;
+	background-color: c.$light-white;
+	z-index: 100;
+
+	&--clicked {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		height: 100vh;
+	}
+
+	&__btn {
+		margin: 1em;
+		padding: 0.5em;
+		background: none;
+		border: 1px solid transparent;
+		z-index: 100;
+		cursor: pointer;
+
+		&:focus {
+			outline: none;
+			border: 1px solid c.$black;
+			border-radius: 4px;
+		}
+	}
+
+	&__btn-icon {
+		font-size: 2rem;
+		color: c.$black;
+	}
+
+	&__items {
+		display: none;
+
+		&--unhidden {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			display: flex;
+			flex-direction: column;
+		}
+	}
+
+	&__item {
+		margin-top: 0.5em;
+		padding: 1em 2em;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-size: 2rem;
+		color: c.$black;
+	}
+
+	&__socials {
+		display: none;
+	}
+}
+
+//   H E A D E R
+
+.header {
+	position: relative;
+	height: 100%;
+	background: c.$pure-white;
+	background-image: url("../img/header_center_medium.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	overflow: hidden;
+
+	&__background {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(255, 255, 255, 0.1);
+	}
+
+	&__text {
+		position: absolute;
+		top: 80%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 100%;
+		text-align: center;
+		color: c.$black;
+
+		p {
+			margin-bottom: 0.5em;
+			text-transform: uppercase;
+			font-size: 1.2rem;
+			letter-spacing: 1px;
+		}
+	}
+
+	&__heading {
+		margin-bottom: 0.5em;
+		font-family: "Rellyan Charlotte", "Dancing Script", "Montserrat", sans-serif;
+		font-size: 3.2rem;
+	}
+}
+
+//   A B O U T  M E
+
+.aboutme {
+	background-color: c.$light-white;
+	padding-bottom: 2em;
+
+	&__title {
+		font-size: 2.6rem;
+	}
+
+	&__underline {
+		width: 15%;
+		height: 2px;
+	}
+
+	&__box {
+		display: flex;
+		flex-direction: column;
+		margin: 2em 1em;
+		padding-bottom: 2em;
+	}
+
+	&__img {
+		margin-bottom: 1em;
+		width: 100%;
+	}
+
+	&__box-text {
+		p {
+			margin: 0.75em 0;
+			line-height: 1.5em;
+			text-align: justify;
+			font-size: 1.2rem;
+		}
+	}
+}
+
+//  O F F E R
+
+.offer {
+	&__title {
+		font-size: 2.6rem;
+	}
+
+	&__underline {
+		width: 15%;
+		height: 2px;
+	}
+
+	&__box {
+		margin: 2em 1em;
+		margin-bottom: 4em;
+	}
+
+	&__product {
+		position: relative;
+		margin: 1em 0;
+		height: 200px;
+		background-size: cover;
+		background-position: center;
+		text-align: center;
+	}
+
+	&__product-bg {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.4);
+		transition: background-color 0.3s;
+	}
+
+	&__product-text {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		color: c.$light-white;
+	}
+
+	&__heading {
+		text-transform: uppercase;
+		font-weight: normal;
+		color: c.$light-white;
+	}
+
+	.first-product {
+		background-image: url("../img/offer_wedding.jpg");
+	}
+
+	.second-product {
+		background-image: url("../img/offer_family.jpg");
+	}
+
+	.third-product {
+		background-image: url("../img/offer_kids.jpg");
+	}
+
+	.fourth-product {
+		background-image: url("../img/offer_outdoor.jpg");
+	}
+}
+
+//  C O N T A C T
+
+.contact {
+	background-color: c.$light-white;
+
+	&__title {
+		font-size: 2.6rem;
+	}
+
+	&__underline {
+		width: 15%;
+		height: 2px;
+	}
+
+	&__form,
+	&__form-box {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__form {
+		margin: 2em 1em;
+	}
+
+	&__form-box {
+		padding-bottom: 3em;
+	}
+
+	&__form-label {
+		margin-bottom: 0.5em;
+		text-transform: uppercase;
+		font-size: 1.4rem;
+	}
+
+	&__form-input {
+		margin-bottom: 2em;
+		padding: 0.5em 1em;
+		border: none;
+		font-size: 1.4rem;
+
+		&:focus {
+			outline: none;
+			border: 2px solid c.$gold;
+		}
+	}
+
+	&__form-textarea {
+		margin-bottom: 2em;
+		padding: 0.6em 1.2em;
+		border: none;
+		font-size: 1.4rem;
+		width: 100%;
+		min-height: 150px;
+		resize: vertical;
+
+		&:focus {
+			outline: none;
+			border: 2px solid c.$gold;
+		}
+	}
+
+	&__form-btn {
+		align-self: flex-end;
+		padding: 1em;
+		width: 100%;
+		max-width: 300px;
+		color: c.$pure-white;
+		border: none;
+		background-color: c.$gold;
+		cursor: pointer;
+
+		&:focus {
+			outline: none;
+			border: 2px solid c.$black;
+		}
+	}
+}
+
+.msg-status {
+	display: none;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 0.5em 1em;
+	width: 350px;
+	height: 75px;
+	font-size: 2.2rem;
+}
+
+.msg-success {
+	display: flex;
+	background-color: hsl(143, 83%, 55%);
+}
+
+.msg-error {
+	display: flex;
+	background-color: hsl(9, 100%, 64%);
+}
+
+//  F O O T E R
+
+.footer {
+	overflow: hidden;
+	hr {
+		color: c.$light-white;
+		width: 100vw;
+	}
+
+	&__box {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin: 0 1em;
+	}
+
+	&__contact-details {
+		text-align: center;
+
+		h3 {
+			margin: 0.5em 0;
+			font-family: "Rellyan Charlotte", "Dancing Script", "Montserrat",
+				sans-serif;
+			font-size: 2.6rem;
+		}
+
+		i {
+			margin-right: 0.5em;
+			margin-bottom: 0.25em;
+		}
+
+		p {
+			font-size: 1.4rem;
+		}
+	}
+
+	&__socials {
+		margin: 1em 0;
+
+		a {
+			text-decoration: none;
+			color: c.$black;
+
+			&:link,
+			&:visited {
+				color: c.$black;
+			}
+		}
+
+		i {
+			margin: 0 0.25em;
+			font-size: 2.6rem;
+		}
+	}
+
+	&__copyrights {
+		margin: 1em 0;
+
+		p {
+			font-size: 1.4rem;
+		}
+	}
+}
+
+//   M E D I A  Q U E R I E S
+
+@media (max-width: 576px) and (min-height: 800px) {
+	.header {
+		background-size: 250%;
+		&__text {
+			p {
+				font-size: 1.4rem;
+			}
+		}
+		&__heading {
+			font-size: 3.6rem;
+		}
+	}
+}
+
+@media (min-width: 576px) {
+	.header {
+		&__text {
+			p {
+				font-size: 1.4rem;
+			}
+		}
+		&__heading {
+			font-size: 3.6rem;
+		}
+	}
+
+	.aboutme {
+		&__title {
+			font-size: 2.8rem;
+		}
+
+		&__box-text {
+			p {
+				font-size: 1.4rem;
+			}
+		}
+	}
+
+	.offer {
+		&__title {
+			font-size: 2.8rem;
+		}
+	}
+
+	.contact {
+		&__title {
+			font-size: 2.8rem;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.nav {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+
+		&__btn {
+			display: none;
+		}
+
+		&__items {
+			display: flex;
+			align-items: center;
+		}
+
+		&__item {
+			position: relative;
+			margin-top: 0;
+			padding: 1em 2em;
+			text-decoration: none;
+			text-transform: uppercase;
+			font-size: 1.6rem;
+			color: c.$black;
+			transition: color 0.3s;
+
+			&:hover {
+				color: c.$gold;
+			}
+		}
+
+		&__item,
+		&__item::after,
+		&__item::before {
+			transition: width 0.3s;
+		}
+
+		&__socials {
+			display: flex;
+			flex-direction: row;
+			margin-right: 2em;
+		}
+
+		&__socials-icon {
+			padding: 0.5em;
+			text-decoration: none;
+			font-size: 1.8rem;
+			color: c.$black;
+			transition: color 0.3s, scale 0.3s;
+
+			&:hover {
+				color: c.$gold;
+				scale: 1.3;
+			}
+		}
+	}
+
+	.item-animation::before,
+	.item-animation::after {
+		content: "";
+		position: absolute;
+		width: 0;
+		bottom: 0;
+		border-bottom: 2px solid c.$gold;
+	}
+
+	.item-animation::before {
+		right: 50%;
+	}
+
+	.item-animation::after {
+		left: 50%;
+	}
+
+	.item-animation:hover::before,
+	.item-animation:hover::after {
+		width: 50%;
+	}
+
+	.header {
+		background-image: url("../img/header_center_big.jpg");
+		background-attachment: fixed;
+
+		&__text {
+			p {
+				font-size: 1.6rem;
+				letter-spacing: 2px;
+			}
+		}
+
+		&__heading {
+			font-size: 4.2rem;
+		}
+	}
+
+	.aboutme {
+		&__title {
+			font-size: 3rem;
+		}
+
+		&__underline {
+			width: 5%;
+			height: 3px;
+		}
+
+		&__box {
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+		}
+
+		&__box-img {
+			width: 50%;
+
+			img {
+				width: 85%;
+			}
+		}
+
+		&__box-text {
+			width: 50%;
+		}
+	}
+
+	.offer {
+		&__title {
+			font-size: 3rem;
+		}
+
+		&__underline {
+			width: 5%;
+			height: 3px;
+		}
+
+		&__box {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+		}
+
+		&__product {
+			margin-bottom: 0;
+			margin-right: 1%;
+			height: 275px;
+			width: 49%;
+			overflow: hidden;
+
+			&:hover .offer__heading {
+				scale: 1.3;
+			}
+
+			&:hover .offer__product-bg {
+				background-color: rgba(0, 0, 0, 0.7);
+			}
+		}
+
+		&__heading {
+			font-size: 2.4rem;
+			transition: scale 0.3s;
+		}
+	}
+
+	.contact {
+		&__title {
+			font-size: 3rem;
+		}
+
+		&__underline {
+			width: 5%;
+			height: 3px;
+		}
+
+		&__form-btn {
+			transition: background-color 0.3s;
+
+			&:hover {
+				background-color: goldenrod;
+			}
+		}
+	}
+
+	.footer {
+		&__contact-details {
+			h3 {
+				font-size: 3.2rem;
+			}
+
+			p {
+				font-size: 1.6rem;
+			}
+		}
+
+		&__socials {
+			i {
+				margin: 0 0.5em;
+				font-size: 3rem;
+				transition: color 0.3s;
+
+				&:hover {
+					color: c.$gold;
+				}
+			}
+		}
+
+		&__copyrights {
+			p {
+				font-size: 1.6rem;
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.nav {
+		&__item {
+			font-size: 1.8rem;
+		}
+
+		&__socials-icon {
+			font-size: 2rem;
+
+			&:hover {
+				scale: 1.5;
+			}
+		}
+	}
+
+	.item-animation::before,
+	.item-animation::after {
+		border-bottom: 3px solid c.$gold;
+	}
+
+	.header {
+		&__text {
+			p {
+				font-size: 1.8rem;
+			}
+		}
+
+		&__heading {
+			font-size: 5.2rem;
+		}
+	}
+
+	.aboutme {
+		&__title {
+			font-size: 3.2rem;
+		}
+
+		&__box-img {
+			width: 50%;
+
+			img {
+				width: 75%;
+			}
+		}
+
+		&__box-text {
+			p {
+				font-size: 1.6rem;
+			}
+		}
+	}
+
+	.offer {
+		&__title {
+			font-size: 3.2rem;
+		}
+
+		&__product {
+			height: 325px;
+		}
+	}
+
+	.contact {
+		&__title {
+			font-size: 3.2rem;
+		}
+	}
+}
+
+@media (min-width: 1080px) {
+	.header {
+		background-image: url("../img/header_left_big.jpg");
+		background-position-y: 35%;
+
+		&__text {
+			top: 60%;
+			left: 75%;
+		}
+	}
+}
+
+@media (min-width: 1200px) {
+	.header {
+		&__heading {
+			font-size: 5.6rem;
+		}
+	}
+}

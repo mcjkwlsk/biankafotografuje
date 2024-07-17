@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bianka fotografuje - Fotografia w naturalnym stylu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/rellyan-charlotte" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/bcb6941396.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+    <nav class="nav">
+        <button class="nav__btn">
+            <i class="nav__btn-icon fa-solid fa-bars"></i>
+        </button>
+        <div class="nav__items">
+            <a href="#" class="nav__item item-animation">Strona główna</a>
+            <a href="#aboutme" class="nav__item item-animation">O mnie</a>
+            <a href="#offer" class="nav__item item-animation">Portfolio</a>
+            <a href="#contact" class="nav__item item-animation">Kontakt</a>
+        </div>
+        <div class="nav__socials">
+            <a href="https://www.facebook.com/Biankafotografuje" target="_blank" class="nav__socials-icon"><i
+                    class="fa-brands fa-square-facebook"></i></a>
+            <a href="https://www.instagram.com/biankafotografuje/" target="_blank" class="nav__socials-icon"><i
+                    class="fa-brands fa-instagram"></i></a>
+        </div>
+    </nav>
+    <header class="header">
+        <div class="header__background"></div>
+        <div class="header__text">
+            <h1 class="header__heading">Bianka fotografuje</h1>
+            <p>Fotografia w naturalnym stylu</p>
+        </div>
+    </header>
+    <main>
+        <section id="aboutme" class="aboutme">
+            <div class="wrapper">
+                <h2 class="aboutme__title section-title">O mnie</h2>
+                <div class="aboutme__underline section-underline"></div>
+                <div class="aboutme__box">
+                    <div class="aboutme__box-img">
+                        <img src="./img/bianka_portrait.png" alt="" class="aboutme__img">
+                    </div>
+                    <div class="aboutme__box-text">
+                        <h3>Hej, mam na imię Bianka</h3>
+                        <p>Od kilku lat zajmuje się fotografią. Wykonuję sesje ślubne, rodzinne, dzięcece i plenerowe.
+                            Kocham zdjęcia, zwłaszcza w wersji papierowej. W swoją pracę wkładam całe serce. Moje
+                            zdjęcia najlepiej określa minimalizm. Uwielbiam ujęcia w naturalnym świetle i stonowanych,
+                            ciepłych kolorach. Na odbitkach próbuję przedstawić przede wszystkim prawdziwe emocje.
+                            Fotografia to cudowna podróż w czasie, w którą chętnie wyruszę razem z Wami.
+                        <p>Przykładam ogromną wagę do miejsca, wystroju, światła i dekoracji. Staram się stworzyć
+                            najlepsze możliwe warunki do sesji, żebyście czuli się dobrze i komfortowo. W końcu to Wy
+                            jesteście najważniejsi. Jedyne czego oczekuję, to odrobina dobrej energii, empatii i
+                            wzajemnego szacunku. Zależy mi, żebyście wiedzieli jaka jestem i jaki jest mój styl pracy.
+                            Dzięki temu razem stworzymy cudowne pamiątki na lata.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="offer" class="offer">
+            <div class="wrapper">
+                <h2 class="offer__title section-title">Portfolio</h2>
+                <div class="offer__underline section-underline"></div>
+                <div class="offer__box">
+                    <div class="offer__product first-product">
+                        <div class="offer__product-bg"></div>
+                        <div class="offer__product-text">
+                            <a href="./wedding.html">
+                                <h3 class="offer__heading">Fotografia ślubna</h3>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="offer__product second-product">
+                        <div class="offer__product-bg"></div>
+                        <div class="offer__product-text">
+                            <a href="./family.html">
+                                <h3 class="offer__heading">Fotografia rodzinna</h3>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="offer__product third-product">
+                        <div class="offer__product-bg"></div>
+                        <div class="offer__product-text">
+                            <a href="./children.html" class="offer__heading">
+                                <h3 class="offer__heading">Fotografia dziecięca</h3>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="offer__product fourth-product">
+                        <div class="offer__product-bg"></div>
+                        <div class="offer__product-text">
+                            <a href="./outdoor.html">
+                                <h3 class="offer__heading">Sesje plenerowe</h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="contact">
+            <div class="wrapper">
+                <h2 class="contact__title section-title">Kontakt</h2>
+                <div class="contact__underline section-underline"></div>
+                <form action="./mail.php" method="post" class="contact__form">
+                    <div class="contact__form-box">
+                        <label for="name" class="contact__form-label">Imię i nazwisko:</label>
+                        <input type="text" class="contact__form-input" id="name" name="name" required>
+                        <label for="email" class="contact__form-label">Adres e-mail:</label>
+                        <input type="text" class="contact__form-input" id="email" name="email" required>
+                        <label for="msg" class="contact__form-label">Wiadomość:</label>
+                        <textarea class="contact__form-textarea" id="msg" name="msg" required></textarea>
+                        <button type="submit" class="contact__form-btn btn-special-animation">Wyślij</button>
+                    </div>
+                </form>
+            </div>
+            <p class="msg-status"></p>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="wrapper">
+            <div class="footer__box">
+                <div class="footer__contact-details">
+                    <h3>Bianka fotografuje</h3>
+                    <p><i class="fa-solid fa-location-dot"></i>Olsztyn i okolice</p>
+                    <p><i class="fa-solid fa-phone"></i>518 937 228</p>
+                    <p><i class="fa-solid fa-envelope"></i>bianka.fotografuje@gmail.com</p>
+                </div>
+                <div class="footer__socials">
+                    <a href="https://www.facebook.com/Biankafotografuje" target="_blank" class="footer__socials-icon"><i
+                            class="fa-brands fa-square-facebook"></i></a>
+                    <a href="https://www.instagram.com/biankafotografuje/" target="_blank"
+                        class="footer__socials-icon"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+                <hr>
+                <div class="footer__copyrights">
+                    <p class="footer__text"> &copy; <span class="footer__year"></span> Bianka fotografuje </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="./js/main.js"></script>
+    <script src="./js/mail.js"></script>
+</body>
+
+</html>
